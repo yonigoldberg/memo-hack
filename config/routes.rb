@@ -4,6 +4,9 @@ MemoHack::Application.routes.draw do
   match 'memory' => 'memory#memory'
   match 'review' => 'review#review'
   match 'about' => 'about#about'
+
+  match "question_form" => "memory#question_form" 
+  post "/addquestion" => "memory#add_question"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

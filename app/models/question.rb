@@ -1,4 +1,3 @@
 class Question < ActiveRecord::Base
-  	attr_accessible :title, :question
-  	
+  attr_accessible :question, :title
 end

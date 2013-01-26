@@ -19,3 +19,11 @@ function placeCaretAtEnd(el) {
         textRange.select();
     }
 }
+
+
+function mainPage(){
+    // $("#registerform").validator();
+    $("#register").hide();
+
+    $("#registerButton").click(function(){$("#register").slideDown(250,function(){window.location= "#registerform"} )})
+}

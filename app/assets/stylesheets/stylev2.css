@@ -4,6 +4,37 @@ body {
     margin:0px;
 }
 
+html,body{
+    height: 100%
+}
+
+#holder {
+    min-height: 100%;
+    position:relative;
+}
+
+#body {
+    padding-bottom: 80px;
+}
+
+#footer{
+    bottom: 0;
+    height: 80px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    padding-bottom:20px;
+    padding-top:20px;
+    background-color:#0094d0;
+    width:100%;
+    clear: both;
+    float:left;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+
 .background {
     background: #fff url('background2.png') no-repeat right 86px;
 }
@@ -107,7 +138,7 @@ body {
     padding-top:40px;
     margin:auto;
     clear:both;
-    margin-bottom:160px;
+    margin-bottom:20px;
     background:rgba(255,255,255,0.9);
 }
 
@@ -162,18 +193,34 @@ body {
     text-align:left;
     min-height:200px;
     line-height:180%;
-    margin-bottom:40px;
+    margin-bottom:80px;
 }
 .socialSection {
     padding-bottom:20px;
     padding-top:20px;
     background-color:#0094d0;
     width:100%;
+    clear: both;
+    float:left;
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;         /* Opera/IE 8+ */
 
 }
+
+.savedMemo {
+    float:left;
+    background:#fff;
+    font-family:'Arial', serif;
+    font-size:10pt;
+    color:#87A644;
+    overflow: hidden;
+    min-width:42px;
+    height:42px;
+    margin-left:5px;
+    border:2px solid #87A644;
+}
+
 .friend {
     float:right;
     background:#fff;
@@ -319,3 +366,4 @@ img:hover {
     filter: none;
     -webkit-filter: grayscale(0);
 }
+

@@ -1,4 +1,8 @@
 MemoHack::Application.configure do
+  # Set your own keys
+  #ENV['TUMBLR_KEY'] = 'YYY'
+  #ENV['TUMBLR_SECRET'] = 'XXX'
+
   # Settings specified here will take precedence over those in config/application.rb
 
   # Code is not reloaded between requests

@@ -1,4 +1,7 @@
 MemoHack::Application.configure do
+  ENV['TUMBLR_KEY']='BsAJUThiHasUx7k4WhYfiyBjMXEdgt5IDYdVi4vRYYwSyTfH5I'
+  ENV['TUMBLR_SECRET']='L1gXmEnmPFgkw5CcsozMpvhmTEI0tFKLbaw92rrP11NLsQVJwc'
+
   # Settings specified here will take precedence over those in config/application.rb
 
   # In the development environment your application's code is reloaded on

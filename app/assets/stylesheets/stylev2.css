@@ -131,7 +131,13 @@ html,body{
     margin-top:16px;
     margin-left:20px;
     margin-bottom:10px;
+    text-decoration: none;
 }
+
+.grayColor:hover {
+    text-decoration: underline;
+}
+
 .mainSection {
     width:600px;
     padding:60px;

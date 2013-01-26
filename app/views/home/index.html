@@ -10,8 +10,8 @@
         </div>
         <div class="topRightSection">
             <div class="friend"><div class="text">Log in</div></div>
-                <input class="loginInput" type="password" name="password" value="Password">
-                <input class="loginInput" type="text" name="email" value="Email Address">
+                <input class="loginInput" type="password" name="password" placeholder="Password">
+                <input class="loginInput" type="text" name="email" placeholder="Email Address">
         </div>
         <div class="mainSection">
             <div id="mainTitleLarge">Relive your memories. <br>Share them with your loved ones.</div>
@@ -23,35 +23,16 @@
             <div id ="register">
                 <form id="registerform" >
                   <fieldset class="form">
-                    <p>
-                      <label>Email</label>
-                      <input type="email" name="email" required="required" class="registerInput"/>
-                    </p>
-                    <p>
-                      <label>Password</label>
-                      <input type="password" name="password" required="required" class="registerInput"/>
-                    </p>
-                    <p>
-                      <label>Re-type password</label>
-                      <input type="password" name="verify" required="required" class="registerInput"/>
-                    </p>
-                    <p>
-                      <label>First Name</label>
-                      <input type="text" name="first name" pattern="[a-zA-Z ]" maxlength="30" required="required" class="registerInput"/>
-                    </p>
-                    <label>Last Name</label>
-                      <input type="text" name="last name" pattern="[a-zA-Z ]" maxlength="30" required="required" class="registerInput"/>
-                    </p>
-                    <p>
-                      <label>Date of Birth</label>
-                      <input type="date" name="birth"/>
-                    </p>
-                    <p id="terms">
-                      <label>I accept the terms</label>
-                      <input type="checkbox" required="required" />
-                    </p>
-                    <button type="submit">Submit form</button>
-                    <button type="reset">Reset</button>
+                      <input type="email" name="email" required="required" class="registerInput" placeholder="Email Address"/>
+                      <input type="password" name="password" required="required" class="registerInput" placeholder="Password"/>
+                      <input type="password" name="verify" required="required" class="registerInput" placeholder="Re-type password"/>
+                      <input type="text" name="first name" pattern="[a-zA-Z ]" maxlength="30" required="required" class="registerInput" placeholder="First name"/>
+                      <input type="text" name="last name" pattern="[a-zA-Z ]" maxlength="30" required="required" class="registerInput" placeholder="Last Name"/>
+                      <p>
+                      <label>Birthday</label>
+                      <input type="date" name="birth" class="registerInput"/>
+                  </p>
+                    <button type="submit" class="register submitForm">Start reliving my memories</button>
                   </fieldset>
                 </form>
             </div>

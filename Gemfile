@@ -6,6 +6,7 @@ gem 'rails', '3.2.8'
 gem 'pg'
 gem 'haml'
 gem 'omniauth-tumblr'
+gem 'authlogic'
 
 # Gems used only for assets and not required
 # in production environments by default.

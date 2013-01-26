@@ -5,8 +5,9 @@ MemoHack::Application.routes.draw do
   match 'review' => 'review#review'
   match 'about' => 'about#about'
   match '/auth/:provider/callback' => 'authentications#create'
+  match 'logout' => 'authentications#destroy'
 
-  match "question_form" => "memory#question_form" 
+  match "question_form" => "memory#question_form"
   post "/addquestion" => "memory#add_question"
 
 end

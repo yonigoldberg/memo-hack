@@ -11,13 +11,39 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130126164254) do
+ActiveRecord::Schema.define(:version => 20130126165326) do
+
+  create_table "authentications", :force => true do |t|
+    t.integer "user_id"
+    t.string  "uid"
+    t.string  "provider"
+    t.string  "token"
+    t.string  "secret"
+  end
 
   create_table "questions", :force => true do |t|
     t.string   "title"
     t.string   "question"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "tumblr_uid"
+    t.string   "nickname"
+    t.string   "avatar"
+    t.string   "persistence_token",                 :null => false
+    t.string   "crypted_password"
+    t.string   "password_salt"
+    t.integer  "login_count",        :default => 0, :null => false
+    t.integer  "failed_login_count", :default => 0, :null => false
+    t.datetime "last_request_at"
+    t.datetime "current_login_at"
+    t.datetime "last_login_at"
+    t.string   "current_login_ip"
+    t.string   "last_login_ip"
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
   end
 
 end

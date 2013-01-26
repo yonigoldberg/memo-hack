@@ -19,4 +19,16 @@
   src: local('PT Serif'), local('PTSerif-Regular'), url(http://themes.googleusercontent.com/static/fonts/ptserif/v4/sDRi4fY9bOiJUbgq53yZCXYhjbSpvc47ee6xR_80Hnw.woff) format('woff');
 }
 
+@font-face {
+  font-family: 'Norican';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Norican Regular'), local('Norican-Regular'), url(http://themes.googleusercontent.com/static/fonts/norican/v1/fJyH16wZvqLrtcqcBNlaAgLUuEpTyoUstqEm5AMlJo4.woff) format('woff');
+}
 
+@font-face {
+  font-family: 'Rufina';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Rufina'), local('Rufina-Regular'), url(http://themes.googleusercontent.com/static/fonts/rufina/v1/zP5O9EGisN3I3U7VvwkLhuvvDin1pK8aKteLpeZ5c0A.woff) format('woff');
+}

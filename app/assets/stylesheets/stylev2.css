@@ -99,25 +99,27 @@ html,body{
 }
 
 .small {
-    font-size:12pt;
+ 
 }
 
 .regularColor {
-    font-family:'PT Serif', serif;
+font-family: 'Norican', cursive;
     color:#fff;
     float:left;
-    padding-left:10px;
-    padding-top:9px;
+    font-size:15pt;
+    padding-left:14px;
+    padding-top:5px;
     padding-bottom:5px;
+    padding-right:3px;
 }
 .boldColor {
     font-family:'PT Serif', serif;
     color:#fff;
-    font-style: italic;
     float:left;
-    padding-right:10px;
-    padding-top:9px;
+    padding-right:14px;
+    padding-top:7px;
     padding-bottom:5px;
+   font-size:13pt;
 }
 
 .subTitle {

@@ -1,7 +1,4 @@
-$(function () {
-    // placeCaretAtEnd($('#mainEditorWindow').get(0));
-    //$('#mainEditorWindow').focus();
-});
+
 
 function placeCaretAtEnd(el) {
     el.focus();
@@ -20,10 +17,13 @@ function placeCaretAtEnd(el) {
     }
 }
 
+function writePage(){
+    placeCaretAtEnd($('#mainEditorWindow').get(0));
+}
 
 function mainPage(){
     // $("#registerform").validator();
     $("#register").hide();
 
-    $("#registerButton").click(function(){$("#register").slideDown(250,function(){window.location= "#registerform"} )})
+    $("#registerButton").click(function(){$("#register").slideDown(250,function(){window.location= "#registerButton"} )})
 }

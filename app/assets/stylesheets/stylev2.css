@@ -206,15 +206,30 @@ body {
     box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
-.registerForm {
+.form {
     background:#f0f6f8;
-    width:100%;
-    margin-top:30px;
+    margin:0px;
     margin-bottom:20px;
     text-align: center;
+    border:none;
+    font-family:'PT Serif', serif;
+    font-size:12pt;
 }
 
 .registerInput {
+    font-family:'PT Serif', serif;
+    color:#000;
+    font-size:10pt;
+    padding:13px;
+    padding-bottom:12px;
+    margin-top:20px;
+    width:100%;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+.loginInput {
     float:right;
     font-family:'PT Serif', serif;
     color:#999;
@@ -228,7 +243,6 @@ body {
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;         /* Opera/IE 8+ */
     width:180px;
-
 }
 
 .register:hover {

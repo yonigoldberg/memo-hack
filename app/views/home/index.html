@@ -10,8 +10,8 @@
         </div>
         <div class="topRightSection">
             <div class="friend"><div class="text">Log in</div></div>
-                <input class="registerInput" type="password" name="password" value="Password">
-                <input class="registerInput" type="text" name="email" value="Email Address">
+                <input class="loginInput" type="password" name="password" value="Password">
+                <input class="loginInput" type="text" name="email" value="Email Address">
         </div>
         <div class="mainSection">
             <div id="mainTitleLarge">Relive your memories. <br>Share them with your loved ones.</div>
@@ -22,28 +22,25 @@
 
             <div id ="register">
                 <form id="registerform" >
-                  <fieldset>
-                    <h3>Register to myMemo for free!</h3>
-                    <p> Enter bad values and then press the submit button. </p>
-                 
+                  <fieldset class="form">
                     <p>
-                      <label>email *</label>
-                      <input type="email" name="email" required="required" />
+                      <label>Email</label>
+                      <input type="email" name="email" required="required" class="registerInput"/>
                     </p>
                     <p>
-                      <label>password *</label>
-                      <input type="password" name="password" required="required" />
+                      <label>Password</label>
+                      <input type="password" name="password" required="required" class="registerInput"/>
                     </p>
                     <p>
-                      <label>verify password *</label>
-                      <input type="password" name="verify" required="required" />
+                      <label>Re-type password</label>
+                      <input type="password" name="verify" required="required" class="registerInput"/>
                     </p>
                     <p>
-                      <label>First Name *</label>
-                      <input type="text" name="first name" pattern="[a-zA-Z ]" maxlength="30" required="required"/>
+                      <label>First Name</label>
+                      <input type="text" name="first name" pattern="[a-zA-Z ]" maxlength="30" required="required" class="registerInput"/>
                     </p>
-                    <label>Last Name *</label>
-                      <input type="text" name="last name" pattern="[a-zA-Z ]" maxlength="30" required="required"/>
+                    <label>Last Name</label>
+                      <input type="text" name="last name" pattern="[a-zA-Z ]" maxlength="30" required="required" class="registerInput"/>
                     </p>
                     <p>
                       <label>Date of Birth</label>

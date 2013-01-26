@@ -1,14 +1,14 @@
 class MemoryController < ApplicationController
-	
+	before_filter :require_user
+
 	def memory
-		@user = current_user
 		if (params.has_key?('qid'))
 			random_memory() unless @question = Question.find_by_id(params[:qid])
 		else
 			random_memory()
 		end
 	end
-	
+
 	def add_question
 		@q = Question.new(:title => params[:title], :question => params[:question]);
 		@q.save

@@ -7,6 +7,9 @@
             %img{:src=>"#{@user.avatar}",:style=>"width:46px;height:46px;float:left"}
             %a.friend{:href=>"./logout"}
                 .text Log out
+
+            %img{:src=>"#{@current_user.avatar}" }
+
             .divider
             %a.friend{:href=>"./review"}
                 .text Review my memories
@@ -19,7 +22,7 @@
             %a.curl{:href=>"memory"} Relive a new memory
 
         .mainSectionInternal
-            #mainTitleLarge 
+            #mainTitleLarge
                 = @question[:title]
             #mainEditorWindow{:contentEditable=>"true"}
                 = @question[:question]

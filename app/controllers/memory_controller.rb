@@ -1,11 +1,10 @@
 class MemoryController < ApplicationController
 	
 	def memory
-		puts params
 		if (params.has_key?('qid'))
-			@question = Question.find(params[:qid])	
+			random_memory() unless @question = Question.find_by_id(params[:qid])
 		else
-			redirect_to :action => "memory", :qid => Question.first(:offset => rand(Question.count))
+			random_memory()
 		end
 	end
 	
@@ -16,5 +15,9 @@ class MemoryController < ApplicationController
 	end
 
 	def question_form
+	end
+
+	def random_memory
+		redirect_to :action => "memory", :qid => Question.first(:offset => rand(Question.count))
 	end
 end

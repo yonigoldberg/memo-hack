@@ -4,14 +4,16 @@
             .logo.logoInternal
                 %span.regularColor.small my
                 %span.boldColor.small memories
-            .savedMemo
-                .text Memory saved
-            .friend
+            %a.friend{:href=>"./logout"}
                 .text Log out
-            .friend
-                .text Share
+            .divider
             .friend
                 .text Review my memories
+            .friend
+                .text Share
+            .divider
+            .savedMemo
+                .text Memory saved
         .pageCurlSection
             .text Relive a new memory
 

@@ -258,8 +258,20 @@ font-family: 'Norican', cursive;
     border:2px solid #87A644;
 }
 
+.left {
+    float:left;
+}
+
+.divider {
+    float:left;
+    height:46px;
+    margin-left: 5px;
+    width:1px;
+    background: #ddd;
+}
+
 .friend {
-    float:right;
+    float:left;
     background:#fff;
     font-family:'Arial', serif;
     font-size:10pt;
@@ -270,6 +282,7 @@ font-family: 'Norican', cursive;
     margin-left:5px;
     border:2px solid #dbdbdb;
     cursor:pointer;
+    text-decoration: none;
 }
 
 .register {

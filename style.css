@@ -1,0 +1,210 @@
+body {
+    margin:auto;
+    text-align:center;
+    margin:0px;
+    background:#FCF4E5;
+}
+.topLeftSection {
+    float:left;
+    margin-left:20px;
+    margin-top:20px;
+}
+
+.topRightSection {
+    float:right;
+    margin-right:20px;
+    margin-top:20px;
+}
+
+.logo {
+    border:2px solid #6A7689;
+    background:#6A7689;
+    float:left;
+    margin-bottom: 4px;
+    height:42px;
+}
+
+
+.large {
+    font-size:24pt;
+}
+
+.small {
+    font-size:12pt;
+}
+
+.regularColor {
+    font-family:'PT Serif', serif;
+    color:#fff;
+    float:left;
+    padding-left:10px;
+    padding-top:9px;
+    padding-bottom:5px;
+}
+.boldColor {
+    font-family:'PT Serif', serif;
+    color:#fff;
+    font-weight:bold;
+    float:left;
+    padding-right:10px;
+    padding-top:9px;
+    padding-bottom:5px;
+}
+
+.subTitle {
+    font-family:'Arial', serif;
+    font-size:8pt;
+    color:#999;
+    clear:both;
+    float:left;
+}
+
+.subTitleLarge {
+    font-family:'PT Serif', serif;
+    font-size:14pt;
+    color:#999;
+    clear:both;
+    float:left;
+}
+
+.grayColor {
+    font-family:'Arial', serif;
+    color:#fff;
+    font-size:9pt;
+    float:left;
+    margin-top:16px;
+    margin-left:20px;
+    margin-bottom:10px;
+}
+.mainSection {
+    width:600px;
+    margin:auto;
+    clear:both;
+    margin-bottom:160px;
+}
+#mainQuestion {
+    font-family:'PT Serif', serif;
+    color:#000;
+    font-size:18pt;
+    margin-bottom:25px;
+}
+
+#mainTitleLarge {
+    font-family:'PT Serif', serif;
+    color:#000;
+    font-size:24pt;
+    margin-bottom:25px;
+    line-height:140%;
+}
+
+#mainDescriptionWindow {
+    font-family:'PT Serif', serif;
+    color:#333;
+    font-size:14pt;
+    text-align: center;
+    line-height:190%;
+}
+
+.exampleLink {
+    font-family:'PT Serif', serif;
+    text-decoration:underline;
+    font-style:italic;
+    color:#333;
+    font-size:12pt;
+    text-align: center;
+    line-height:190%;
+    cursor:pointer;
+    margin-top:20px;
+}
+
+#mainEditorWindow {
+    font-family:'PT Serif', serif;
+    color:#333;
+    font-size:14pt;
+    outline:0px solid transparent;
+    text-align:left;
+    min-height:200px;
+    line-height:180%;
+    margin-bottom:80px;
+}
+.socialSection {
+    position:fixed;
+    bottom:0px;
+    padding-bottom:20px;
+    padding-top:20px;
+    background-color:#B13F3A;
+    right:0px;
+    width:100%;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+
+}
+.friend {
+    float:right;
+    background:#FCF4E5;
+    font-family:'Arial', serif;
+    font-size:10pt;
+    color:#000;
+    overflow: hidden;
+    min-width:42px;
+    height:42px;
+    margin-left:5px;
+    border:2px solid #222;
+    cursor:pointer;
+}
+
+.register {
+    margin-left:auto;
+    margin-right:auto;
+    background:#B13F3A;
+    font-family:'Arial', serif;
+    font-size:10pt;
+    color:#fff;
+    overflow: hidden;
+    height:42px;
+    width:300px;
+    border:2px solid #B13F3A;
+    cursor:pointer; 
+    margin-top:30px;
+
+}
+
+.register:hover {
+    background:#EBDCCA;
+    color:#000;
+}
+
+.friend:hover {
+    background:#EBDCCA;
+    color:#000;
+}
+
+
+.text {
+    padding-top:13px;
+    padding-right:20px;
+    padding-left:20px;
+}
+
+.picture {
+    width:42px;
+    border:0px solid #fff;
+    height:46px;
+    width:46px;
+}
+
+img {
+    filter: url(filters.svg#grayscale); /* Firefox 3.5+ */
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale(1); /* Google Chrome & Safari 6+ */
+}
+
+img:hover {
+    filter: none;
+    -webkit-filter: grayscale(0);
+}
+
+.right {
+    margin-right:20px;
+}

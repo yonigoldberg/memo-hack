@@ -270,7 +270,33 @@ body {
 }
 
 .reviewmainSectionInternal {
-    border-bottom:1px solid #ddd;
+    float: left;
+    margin: 10px;
+    border-top:3px solid #74bcd1;
+}
+
+.col1 {
+    width: 220px;
+}
+
+.col2 {
+    width: 460px;
+}
+
+.col3 {
+    width: 700px;
+}
+
+#thumblog {
+    width: 960px;
+    margin: auto;
+    /*padding-left: 50px;*/
+    /*padding-right: 50px;*/
+    clear: both;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+
 }
 
 .picture {

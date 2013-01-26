@@ -1,5 +1,5 @@
 $(function () {
-    placeCaretAtEnd($('#mainEditorWindow').get(0));
+    // placeCaretAtEnd($('#mainEditorWindow').get(0));
     //$('#mainEditorWindow').focus();
 });
 

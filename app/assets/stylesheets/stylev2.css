@@ -165,12 +165,9 @@ body {
     margin-bottom:40px;
 }
 .socialSection {
-    position:fixed;
-    bottom:0px;
     padding-bottom:20px;
     padding-top:20px;
     background-color:#0094d0;
-    right:0px;
     width:100%;
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
@@ -214,15 +211,16 @@ body {
     border:none;
     font-family:'PT Serif', serif;
     font-size:12pt;
+    padding:20px;
 }
 
 .registerInput {
     font-family:'PT Serif', serif;
     color:#000;
-    font-size:10pt;
+    font-size:12pt;
     padding:13px;
     padding-bottom:12px;
-    margin-top:20px;
+    margin-bottom:20px;
     width:100%;
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
@@ -232,7 +230,7 @@ body {
 .loginInput {
     float:right;
     font-family:'PT Serif', serif;
-    color:#999;
+    color:#000;
     font-size:10pt;
     padding:13px;
     padding-bottom:12px;
@@ -270,7 +268,38 @@ body {
 }
 
 .reviewmainSectionInternal {
-    border-bottom:1px solid #ddd;
+    float: left;
+    margin: 10px;
+    border-top:3px solid #74bcd1;
+}
+
+.col1 {
+    width: 220px;
+}
+
+.col2 {
+    width: 460px;
+}
+
+.col3 {
+    width: 700px;
+}
+
+#thumblog {
+    width: 960px;
+    margin: auto;
+    /*padding-left: 50px;*/
+    /*padding-right: 50px;*/
+    clear: both;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+
+}
+
+.submitForm {
+    padding-right: 20px;
+    padding-left: 20px;
 }
 
 .picture {

@@ -29,5 +29,5 @@ function writePage(){
 }
 
 function mainPage(){
-    
+    $("#registerButton").click(function(){window.location = "./auth/tumblr"});
 }

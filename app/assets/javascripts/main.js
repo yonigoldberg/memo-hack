@@ -23,7 +23,9 @@ function writePage(){
 
 function mainPage(){
     // $("#registerform").validator();
-    $("#register").hide();
+    //$("#register").hide();
 
-    $("#registerButton").click(function(){$("#register").slideDown(250,function(){window.location= "#registerButton"} )})
+    $("#registerButton").click(function(){window.location = "./auth/tumblr"})
+
+    //$("#registerButton").click(function(){$("#register").slideDown(250,function(){window.location= "#registerButton"} )})
 }

@@ -4,11 +4,11 @@
             .logo.logoInternal
                 %span.regularColor.small my
                 %span.boldColor.small memories
+            %img{:src=>"#{@user.avatar}",:style=>"width:46px;height:46px;float:left"}
             %a.friend{:href=>"./logout"}
                 .text Log out
-            %img{:src=>"#{@user.avatar}" }
             .divider
-            .friend
+            %a.friend{:href=>"./review"}
                 .text Review my memories
             .friend
                 .text Share
@@ -16,8 +16,7 @@
             .savedMemo
                 .text Memory saved
         .pageCurlSection
-            %a{:href=>"memory"}
-                .text Relive a new memory
+            %a.curl{:href=>"memory"} Relive a new memory
 
         .mainSectionInternal
             #mainTitleLarge 

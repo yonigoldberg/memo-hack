@@ -34,6 +34,19 @@ html,body{
     box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
+#footerReview{
+    float:left;
+    padding-bottom:20px;
+    padding-top:20px;
+    background-color:#0094d0;
+    width:100%;
+    clear: both;
+    height:80px;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
 
 .background {
     background: #fff url('background2.png') no-repeat right 86px;
@@ -197,7 +210,14 @@ html,body{
     text-align: center;
     line-height:190%;
     cursor:pointer;
-    margin-top:20px;
+}
+
+.exampleLink:hover {
+    color:#0094d0;
+}
+
+.example {
+    margin-top: 20px;
 }
 
 #mainEditorWindow {

@@ -1,7 +1,8 @@
 class HomeController < ApplicationController
 
 	def index
-		redirect_to :memory if (current_user)
+	   if (current_user)
+      redirect_to :memory
+    end
 	end
-
 end

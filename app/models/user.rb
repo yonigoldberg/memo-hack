@@ -14,4 +14,22 @@ class User < ActiveRecord::Base
       :nickname => auth["info"]["nickname"],
       :avatar => auth["info"]["avatar"])
   end
+
+
+  def prepare_tumblr_access_token
+    #TODO add error handling
+    auth = get_tumblr_authentication
+    consumer = OAuth::Consumer.new(ENV['TUMBLR_KEY'], ENV['TUMBLR_SECRET'],
+      {:site => "http://www.tumblr.com/"})
+
+    token_hash = {:oauth_token => auth.token,:oauth_token_secret => auth.secret}
+    access_token = OAuth::AccessToken.from_hash(consumer, token_hash )
+  end
+
+  private
+  def get_tumblr_authentication
+   authentications = self.authentications.select {|auth| auth.provider == "tumblr"}
+   authentications.first unless authentications.empty?
+  end
+
 end

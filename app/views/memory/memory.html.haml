@@ -4,11 +4,9 @@
             .logo.logoInternal
                 %span.regularColor.small my
                 %span.boldColor.small memories
-            %img{:src=>"#{@user.avatar}",:style=>"width:46px;height:46px;float:left"}
+            %img{:src=>"#{@current_user.avatar}",:style=>"width:46px;height:46px;float:left"}
             %a.friend{:href=>"./logout"}
                 .text Log out
-
-            %img{:src=>"#{@current_user.avatar}" }
 
             .divider
             %a.friend{:href=>"./review"}
@@ -26,6 +24,11 @@
                 = @question[:title]
             #mainEditorWindow{:contentEditable=>"true"}
                 = @question[:question]
+            #mainTitleLarge
+                - @blogs.each do |b|
+                    %h2 Blog:
+                    #{b.inspect}
+
     #footer
         %a.grayColor{:href=>"./about"}
             About mymemories

@@ -9,7 +9,6 @@ class AuthenticationsController < ApplicationController
     else
       # User is new to this application
       @new_auth = Authentication.create_from_auth(auth, current_user)
-      puts "WTF #{@new_auth.inspect}"
       UserSession.create(@new_auth.user, true)
       redirect_to :root
     end

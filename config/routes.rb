@@ -9,5 +9,4 @@ MemoHack::Application.routes.draw do
 
   match "question_form" => "memory#question_form"
   post "/addquestion" => "memory#add_question"
-
 end

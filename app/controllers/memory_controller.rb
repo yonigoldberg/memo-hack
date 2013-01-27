@@ -1,7 +1,11 @@
 class MemoryController < ApplicationController
+	include TumblrHelper
+
 	before_filter :require_user
 
 	def memory
+		@blogs = TumblrHelper.get_blog_list(current_user)
+
 		if (params.has_key?('qid'))
 			random_memory() unless @question = Question.find_by_id(params[:qid])
 		else

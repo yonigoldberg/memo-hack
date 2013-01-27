@@ -121,6 +121,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   haml
   jquery-rails
+  json
   omniauth-tumblr
   pg
   rails (= 3.2.8)

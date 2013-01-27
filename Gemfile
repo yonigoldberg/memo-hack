@@ -7,7 +7,7 @@ gem 'pg'
 gem 'haml'
 gem 'omniauth-tumblr'
 gem 'authlogic'
-
+gem 'json'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

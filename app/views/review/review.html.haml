@@ -15,10 +15,14 @@
         .pageCurlSection
             %a.curl{:href=>"memory"} Relive a new memory
 
+        .mainSectionInternal
+            #mainTitleLarge My writings
+            #mainDescriptionWindow See an aggregation of my past work.
+
         .askQuestion
             .askQuestionInternal
                 .suggestTopic Suggest a topic
-                %input.registerInput.long{:type=>"text",:name=>"title",:required=>"required", :placeholder=>"Topic"}
+                %input.registerInput.long{:type=>"text",:name=>"title",:required=>"required", :placeholder=>"Topic. i.e my first kiss"}
                 %input.registerInput.short{:type=>"text",:name=>"title",:required=>"required", :placeholder=>"My name"}
                 %button.register.submitForm.left{:type=>"submit"} Suggest
 

@@ -15,6 +15,23 @@
         .pageCurlSection
             %a.curl{:href=>"memory"} Relive a new memory
 
+        .mainSectionInternal
+            #mainTitleLarge Share my memories
+            #mainDescriptionWindow Show my writings to friends and family. Ask them to suggest new topics to write about.
+
+        .askQuestion
+            .askQuestionInternal
+                .suggestTopic 1.
+                %input.registerInput.long{:type=>"text",:name=>"title",:required=>"required", :placeholder=>"Email address"}
+                %input.registerInput.short{:type=>"text",:name=>"title",:required=>"required", :placeholder=>"Name"}
+                %button.register.submitForm.left{:type=>"submit"} Share
+
+        .askQuestion
+            .askQuestionInternal
+                .suggestTopic 2.
+                %input.registerInput.long{:type=>"text",:name=>"title",:required=>"required", :placeholder=>"Email address"}
+                %input.registerInput.short{:type=>"text",:name=>"title",:required=>"required", :placeholder=>"Name"}
+                %button.register.submitForm.left{:type=>"submit"} Share
 
     #footer
         %a.grayColor{:href=>"./about"}

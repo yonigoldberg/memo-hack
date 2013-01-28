@@ -307,9 +307,8 @@ font-family: 'Norican', cursive;
 .askQuestion {
     clear:both;
     margin: auto;
-    padding-top:30px;
-    margin-bottom: 10px;
     width: 960px;
+    padding-top: 10px;
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;         /* Opera/IE 8+ */
@@ -423,7 +422,9 @@ font-family: 'Norican', cursive;
 .reviewmainSectionInternal {
     float: left;
     margin: 10px;
-    border-top:3px solid #74bcd1;
+    margin-top:0px;
+    padding-top:20px;
+    border-top:2px solid #ddd;
 }
 
 .col1 {

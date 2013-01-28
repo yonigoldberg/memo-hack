@@ -114,7 +114,7 @@ font-family: 'Norican', cursive;
     float:left;
     font-size:15pt;
     padding-left:14px;
-    padding-top:5px;
+    padding-top:6px;
     padding-bottom:5px;
     padding-right:3px;
 }
@@ -123,7 +123,7 @@ font-family: 'Norican', cursive;
     color:#fff;
     float:left;
     padding-right:14px;
-    padding-top:7px;
+    padding-top:8px;
     padding-bottom:5px;
    font-size:13pt;
 }
@@ -199,6 +199,19 @@ font-family: 'Norican', cursive;
     font-size:24pt;
     margin-bottom:25px;
     line-height:140%;
+}
+
+.suggestTopic {
+    font-family:'PT Serif', serif;
+    color:#000;
+    font-size:14pt;
+    line-height:140%;
+    float:left;
+    width:140px;
+    margin-top: 14px;
+    margin-right: 10px;
+    margin-left:10px;
+    text-align: left;
 }
 
 #mainDescriptionWindow {
@@ -291,6 +304,27 @@ font-family: 'Norican', cursive;
     text-decoration: none;
 }
 
+.askQuestion {
+    clear:both;
+    margin: auto;
+    padding-top:30px;
+    margin-bottom: 10px;
+    width: 960px;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+.askQuestionInternal {
+    background:#f0f6f8;
+    float:left;
+    width: 100%;
+    padding:10px;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
 .register {
     background:#0094d0;
     font-family:'Arial', serif;
@@ -300,10 +334,18 @@ font-family: 'Norican', cursive;
     height:52px;
     border:2px solid #0094d0;
     cursor:pointer; 
-    margin-top:30px;
+    margin-top:1px;
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+.login {
+    margin-top: 40px;
+}
+
+.left {
+    float:left;
 }
 
 .form {
@@ -323,11 +365,19 @@ font-family: 'Norican', cursive;
     font-size:12pt;
     padding:13px;
     padding-bottom:12px;
-    margin-bottom:20px;
-    width:100%;
+    margin-right: 10px;
+    float:left;
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+.long {
+    width:400px;
+}
+
+.short {
+    width:220px;
 }
 
 .loginInput {
@@ -391,6 +441,7 @@ font-family: 'Norican', cursive;
 #thumblog {
     width: 960px;
     margin: auto;
+    padding-top: 40px;
     /*padding-left: 50px;*/
     /*padding-right: 50px;*/
     clear: both;
@@ -403,6 +454,10 @@ font-family: 'Norican', cursive;
 .submitForm {
     padding-right: 20px;
     padding-left: 20px;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+    width:140px;
 }
 
 .picture {

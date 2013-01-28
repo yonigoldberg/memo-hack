@@ -2,17 +2,16 @@
     #body
         .topLeftSection
             .logo.logoInternal
-                %span.regularColor.small my
-                %span.boldColor.small memories
+                %span.regularColor.small bio
+                %span.boldColor.small blr
             %img{:src=>"#{@current_user.avatar}",:style=>"width:46px;height:46px;float:left"}
             %a.friend{:href=>"./logout"}
                 .text Log out
-
             .divider
             %a.friend{:href=>"./review"}
                 .text Review my memories
-            .friend
-                .text Share
+            %a.friend{:href=>"./share"}
+                .text Share my memories
             .divider
             .savedMemo
                 .text Memory saved
@@ -26,10 +25,10 @@
                     = @question[:title]
                 #mainEditorWindow{:contentEditable=>"true"}
                     = @question[:question]
-                #mainTitleLarge
-                    - @blogs.each do |b|
-                        %h2 Blog:
-                        #{b.inspect}
+                //#mainTitleLarge
+                //    - @blogs.each do |b|
+                //        %h2 Blog:
+                //        #{b.inspect}
             -else
                 Please add a question
 

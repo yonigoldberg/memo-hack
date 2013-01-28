@@ -2,19 +2,25 @@
     #body
         .topLeftSection
             .logo.logoInternal
-                %span.regularColor.small my
-                %span.boldColor.small memories
+                %span.regularColor.small bio
+                %span.boldColor.small blr
             %img{:src=>"#{@current_user.avatar}",:style=>"width:46px;height:46px;float:left"}
             %a.friend{:href=>"./logout"}
                 .text Log out
             .divider
-            %a.friend{:href=>"./review"}
+            %a.friend.selected{:href=>"./review"}
                 .text Review my memories
-            .friend
-                .text Share
-
+            %a.friend{:href=>"./share"}
+                .text Share my memories
         .pageCurlSection
             %a.curl{:href=>"memory"} Relive a new memory
+
+        .askQuestion
+            .askQuestionInternal
+                .suggestTopic Suggest a topic
+                %input.registerInput.long{:type=>"text",:name=>"title",:required=>"required", :placeholder=>"Topic"}
+                %input.registerInput.short{:type=>"text",:name=>"title",:required=>"required", :placeholder=>"My name"}
+                %button.register.submitForm.left{:type=>"submit"} Suggest
 
         #thumblog
             .reviewmainSectionInternal.col2

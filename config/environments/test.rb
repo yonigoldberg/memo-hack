@@ -1,4 +1,9 @@
 MemoHack::Application.configure do
+  ENV['TUMBLR_KEY']='BsAJUThiHasUx7k4WhYfiyBjMXEdgt5IDYdVi4vRYYwSyTfH5I'
+  ENV['TUMBLR_SECRET']='L1gXmEnmPFgkw5CcsozMpvhmTEI0tFKLbaw92rrP11NLsQVJwc'
+  ENV['SECRET_TOKEN']='e0e0bd214d3be7e36815ccbac51240d47af9498d1f98575100c963e255c31a0a3566e461d8335eb3aaa045302b196722c5a39c83a8a8e1c2c7f3fc6e8528023d'
+
+
   # Settings specified here will take precedence over those in config/application.rb
 
   # The test environment is used exclusively to run your application's

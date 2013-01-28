@@ -1,0 +1,22 @@
+#holder.backgroundMemory
+    #body
+        .topLeftSection
+            .logo.logoInternal
+                %span.regularColor.small bio
+                %span.boldColor.small blr
+            %img{:src=>"#{@current_user.avatar}",:style=>"width:46px;height:46px;float:left"}
+            %a.friend{:href=>"./logout"}
+                .text Log out
+            .divider
+            %a.friend{:href=>"./review"}
+                .text Review my memories
+            %a.friend.selected{:href=>"./share"}
+                .text Share my memories
+        .pageCurlSection
+            %a.curl{:href=>"memory"} Relive a new memory
+
+
+    #footer
+        %a.grayColor{:href=>"./about"}
+            About mymemories
+

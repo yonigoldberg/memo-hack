@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   attr_accessible :tumblr_uid, :nickname, :avatar
-  has_many :UserQuestions
+  has_many :questions
   has_many :authentications, :dependent => :destroy
 
   acts_as_authentic do |c|

@@ -30,8 +30,19 @@
                     = @question[:title]
                 #mainEditorWindow{:contentEditable=>"true"}
                     = @question[:question]
+
+
+                .sideArea
+                    %input.date{:contentEditable=>"true",:type=>"date"}
+                    %input.date{:contentEditable=>"true",:placeholder=>"Location"}
+                //#mainTitleLarge
+                //    - @blogs.each do |b|
+                //        %h2 Blog:
+                //        #{b.inspect}
+
             -else
                 Please add a question
+
 
     #footer
         %a.grayColor{:href=>"./about"}

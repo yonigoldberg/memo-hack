@@ -170,7 +170,7 @@ font-family: 'Norican', cursive;
 }
 
 .mainSectionInternal {
-    width:600px;
+    width:800px;
     padding-top:20px;
     margin:auto;
     clear:both;
@@ -253,6 +253,8 @@ font-family: 'Norican', cursive;
 }
 
 #mainEditorWindow {
+    float:left;
+    width:600px;
     font-family:'PT Serif', serif;
     color:#333;
     font-size:14pt;
@@ -262,6 +264,20 @@ font-family: 'Norican', cursive;
     line-height:180%;
     margin-bottom:80px;
 }
+
+.date {
+    margin-left: 20px;
+    float:left;
+    font-family:'PT Serif', serif;
+    color:#333;
+    font-size:14pt;
+    border:none;
+    outline:0px solid transparent;
+    text-align:left;
+    clear: both;
+    margin-bottom: 10px;
+}
+
 .socialSection {
     padding-bottom:20px;
     padding-top:20px;
@@ -313,6 +329,13 @@ font-family: 'Norican', cursive;
     border:2px solid #dbdbdb;
     cursor:pointer;
     text-decoration: none;
+}
+
+.sideArea {
+    float:right;
+    border-left: 1px solid #ddd;
+    height:200px;
+    width:150px;
 }
 
 .askQuestion {

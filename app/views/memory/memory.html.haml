@@ -19,16 +19,17 @@
             %a.curl{:href=>"memory"} Relive a new memory
 
         .mainSectionInternal
+            -if @current_user.blog.nil?
+                %h2
+                    %a{:href => "./user_blog"} please select your tumblr blog
+            - else
+                %h2 selected blog: #{@current_user.blog.blog_name}
             -if !@question.nil?
 
                 #mainTitleLarge
                     = @question[:title]
                 #mainEditorWindow{:contentEditable=>"true"}
                     = @question[:question]
-                //#mainTitleLarge
-                //    - @blogs.each do |b|
-                //        %h2 Blog:
-                //        #{b.inspect}
             -else
                 Please add a question
 

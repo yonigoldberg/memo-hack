@@ -7,6 +7,9 @@ MemoHack::Application.routes.draw do
   match '/auth/:provider/callback' => 'authentications#create'
   match 'logout' => 'authentications#destroy'
   match 'share' => 'share#share'
+  match '/user_blog/save' => 'user_blog#save'
+  match '/user_blog' =>'user_blog#select_blog'
+
 
   match "question_form" => "memory#question_form"
   post "/addquestion" => "memory#add_question"

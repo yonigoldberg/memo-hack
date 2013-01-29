@@ -1,0 +1,5 @@
+%form{:action => "/user_blog/save", :method =>"get"}
+  %select#blogs{:name => 'blog_name'}
+    -@blogs.each do |b|
+      %option{:value => b["name"]}= b["name"]
+  %input{:type => "submit", :value => "submit"}

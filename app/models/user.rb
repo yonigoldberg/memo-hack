@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   attr_accessible :tumblr_uid, :nickname, :avatar
-  has_many :questions
+  has_one :user_blog
   has_many :authentications, :dependent => :destroy
 
   acts_as_authentic do |c|
@@ -24,6 +24,10 @@ class User < ActiveRecord::Base
 
     token_hash = {:oauth_token => auth.token,:oauth_token_secret => auth.secret}
     access_token = OAuth::AccessToken.from_hash(consumer, token_hash )
+  end
+
+  def blog
+    self.user_blog
   end
 
   private

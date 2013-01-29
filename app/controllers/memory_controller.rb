@@ -4,8 +4,6 @@ class MemoryController < ApplicationController
 	before_filter :require_user
 
 	def memory
-		@blogs = TumblrHelper.get_blog_list(current_user)
-
 		if no_questions
 			return
 		elsif (params.has_key?('qid'))

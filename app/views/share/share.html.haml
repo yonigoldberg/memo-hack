@@ -21,17 +21,16 @@
 
         .askQuestion
             .askQuestionInternal
-                .suggestTopic 1.
-                %input.registerInput.long{:type=>"text",:name=>"title",:required=>"required", :placeholder=>"Email address"}
-                %input.registerInput.short{:type=>"text",:name=>"title",:required=>"required", :placeholder=>"Name"}
-                %button.register.submitForm.left{:type=>"submit"} Share
+                .formBar.sharePerson 1.&nbsp;&nbsp;&nbsp;turbahn@gmail.com  /  Itai Turbahn / 3 topics
+                %button.midPageButton.revoke{:type=>"submit"} Revoke
+                %button.midPageButton.revoke{:type=>"submit"} Remind
 
         .askQuestion
             .askQuestionInternal
-                .suggestTopic 2.
+                .formBar.shareNumber 2.
                 %input.registerInput.long{:type=>"text",:name=>"title",:required=>"required", :placeholder=>"Email address"}
                 %input.registerInput.short{:type=>"text",:name=>"title",:required=>"required", :placeholder=>"Name"}
-                %button.register.submitForm.left{:type=>"submit"} Share
+                %button.midPageButton.share{:type=>"submit"} Share my memories
 
     #footer
         %a.grayColor{:href=>"./about"}

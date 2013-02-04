@@ -13,6 +13,15 @@ class MemoryController < ApplicationController
 		end
 	end
 
+	def save_memory_draft
+		if (TumblrHelper.save_post_as_draft(current_user,params[:title], params[:body], params[:date], params[:location]))
+			render :text => "created", :status => 201
+		else
+			render :text => "Error while creating post on tumbler", :status => 400
+		end
+
+	end
+
 	def add_question
 		@q = Question.new(:title => params[:title], :question => params[:question]);
 		@q.save

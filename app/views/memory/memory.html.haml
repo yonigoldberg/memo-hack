@@ -15,6 +15,8 @@
             .divider
             .savedMemo
                 .text Memory saved
+            .unsavedMemo
+                .text Memory unsaved
         .pageCurlSection
             %a.curl{:href=>"memory"} Relive a new memory
 
@@ -26,15 +28,15 @@
                 %h2 selected blog: #{@current_user.blog.blog_name}
             -if !@question.nil?
 
-                #mainTitleLarge
+                #mainTitleLarge{:contentEditable=>"true"}
                     = @question[:title]
                 #mainEditorWindow{:contentEditable=>"true"}
                     = @question[:question]
 
 
                 .sideArea
-                    %input.date{:contentEditable=>"true",:type=>"date"}
-                    %input.date{:contentEditable=>"true",:placeholder=>"Location"}
+                    %input.date{:id=>"memoryDate", :contentEditable=>"true",:type=>"date"}
+                    %input.date{:id=>"memoryLocation", :contentEditable=>"true",:placeholder=>"Location"}
                 //#mainTitleLarge
                 //    - @blogs.each do |b|
                 //        %h2 Blog:

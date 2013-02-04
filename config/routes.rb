@@ -1,7 +1,8 @@
 MemoHack::Application.routes.draw do
   root :to => "home#index"
 
-  match 'memory' => 'memory#memory'
+  get 'memory' => 'memory#memory'
+  post 'memory' => 'memory#save_memory_draft'
   match 'review' => 'review#review'
   match 'about' => 'about#about'
   match '/auth/:provider/callback' => 'authentications#create'

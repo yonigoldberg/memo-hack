@@ -304,6 +304,20 @@ font-family: 'Norican', cursive;
     border:2px solid #87A644;
 }
 
+.unsavedMemo { 
+    float:left;
+    background:#fff;
+    font-family:'Arial', serif;
+    font-size:10pt;
+    color:red;
+    overflow: hidden;
+    min-width:42px;
+    height:42px;
+    margin-left:5px;
+    border:2px solid red;
+    display: none;
+}
+
 .left {
     float:left;
 }

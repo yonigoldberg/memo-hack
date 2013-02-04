@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require underscore-min
 //= require jquery.masonry.min
 // jquery.imagesloaded.min
 //= require_tree .

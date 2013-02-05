@@ -57,4 +57,5 @@
             About mymemories
 
 %script
-    $('#tumblelog').masonry({itemSelector:"reviewmainSectionInternal",columnWidth: 230});
+    displayPartial({tag: ".post_body", maxlength: 300 });
+    $('#tumblelog').masonry({itemSelector:"reviewmainSectionInternal",columnWidth: 240});

@@ -14,6 +14,24 @@ function placeCaretAtEnd(el) {
     }
 }
 
+function displayPartial(options){
+    // set defaults
+    if (!options.tag) return;
+    if (!options.maxlength) options.maxlength = 250;
+    
+
+    $(options.tag).each(function(){
+
+        if ($(this).text().length > options.maxlength){
+            var original_content, $that;
+            original_content = $(this).html();
+            $(this).html($(this).html().substring(0,options.maxlength) + "... <br/>") 
+            $that = $(this);
+            $(this).append("See full post...").click(function(){$that.html(original_content)});
+        }
+    });
+}
+
 function writePage(){
     placeCaretAtEnd($('#mainEditorWindow').get(0));
     var reset = true;

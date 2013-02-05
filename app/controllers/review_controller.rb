@@ -3,5 +3,6 @@ class ReviewController < ApplicationController
 
 	def review
 		@posts = TumblrHelper.get_posts(current_user)
+		@drafts = TumblrHelper.get_drafts(current_user)
 	end
 end

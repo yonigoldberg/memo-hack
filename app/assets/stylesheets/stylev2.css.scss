@@ -502,8 +502,38 @@ font-family: 'Norican', cursive;
     float: left;
     margin: 10px;
     margin-top:0px;
-    padding-top:20px;
     border-top:2px solid #ddd;
+}
+
+.post_title{
+    font-family:'PT Serif', serif;
+    color:#000;
+    font-size:20pt;
+    margin-bottom:10px;
+    line-height:140%;
+}
+
+.post_body{
+    font-family:'PT Serif', serif;
+    color:#333;
+    font-size:13pt;
+    text-align: left;
+    line-height:150%;
+}
+
+.post_date{
+    font-family:'PT Serif', serif;
+    color:#666;
+    font-size: 10pt;
+}
+
+.post_tags{
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    font-family:'PT Serif', serif;
+    color:#666;
+    font-size: 12pt;
 }
 
 .col1 {
@@ -518,12 +548,14 @@ font-family: 'Norican', cursive;
     width: 700px;
 }
 
+.col_separator {
+    width: 900px;
+}
+
 #thumblog {
-    width: 960px;
+    width: 1000px;
     margin: auto;
     padding-top: 40px;
-    /*padding-left: 50px;*/
-    /*padding-right: 50px;*/
     clear: both;
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */

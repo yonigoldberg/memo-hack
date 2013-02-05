@@ -21,11 +21,13 @@ module TumblrHelper
   # specify type of posts to get - text, quote, link, answer, video, audio, photo, chat (none is any kind)
   def self.get_posts(current_user)
   	access_token = current_user.prepare_tumblr_access_token
-  	json = MultiJson.load(access_token.get("http://api.tumblr.com/v2/blog/#{current_user.tumblr_uid}.tumblr.com/posts").body.to_s)
-  	json['response']
+  	json = MultiJson.load(access_token.get("http://api.tumblr.com/v2/blog/#{current_user.tumblr_uid}.tumblr.com/posts?api_key=#{ENV['TUMBLR_KEY']}").body.to_s)
+  	json['response']['posts']
   end
 
   def self.get_drafts(current_user)
-
+  	access_token = current_user.prepare_tumblr_access_token
+  	json = MultiJson.load(access_token.get("http://api.tumblr.com/v2/blog/#{current_user.tumblr_uid}.tumblr.com/posts/draft?api_key=#{ENV['TUMBLR_KEY']}").body.to_s)
+  	json['response']['posts']
   end
 end

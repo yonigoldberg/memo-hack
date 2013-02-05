@@ -25,29 +25,36 @@
                 %input.registerInput.long{:type=>"text",:name=>"title",:required=>"required", :placeholder=>"Topic. i.e my first kiss"}
                 %input.registerInput.short{:type=>"text",:name=>"title",:required=>"required", :placeholder=>"My name"}
                 %button.midPageButton.suggest{:type=>"submit"} Suggest
-        = @posts
         #thumblog
-            .reviewmainSectionInternal.col2
-                #mainTitleLarge My first Kiss
-                #mainEditorWindow{:contentEditable=>"true"} Your thoughts... my memories were pretty cool. I discovered them a long time ago, and it was pretty nice to think that this was the history of everything. It seemed as thought it was the time to eat, play, drink and think, and no one could say anything. I really liked how the grass met the
-            .reviewmainSectionInternal.col2
-                #mainTitleLarge My first Kiss
-                #mainEditorWindow{:contentEditable=>"true"} Your thoughts... my memories were pretty cool. I discovered them a long time ago, and it was pretty nice to think that this was the history of everything. It seemed as thought it was the time to eat, play, drink and think, and no one could say anything. I really liked how the grass met the
-            .reviewmainSectionInternal.col1
-                #mainTitleLarge My first Kiss
-                #mainEditorWindow{:contentEditable=>"true"} Your thoughts... my memories were pretty cool. I discovered them a long time ago, and it was pretty nice to think that this was the history of everything. It seemed as thought it was the time to eat, play, drink and think, and no one could say anything. I really liked how the grass met the
-            .reviewmainSectionInternal.col1
-                #mainTitleLarge My first Kiss
-                #mainEditorWindow{:contentEditable=>"true"} Your thoughts... my memories were pretty cool. I discovered them a long time ago, and it was pretty nice to think that this was the history of everything. It seemed as thought it was the time to eat, play, drink and think, and no one could say anything. I really liked how the grass met the
-            .reviewmainSectionInternal.col1
-                #mainTitleLarge My first Kiss
-                #mainEditorWindow{:contentEditable=>"true"} Your thoughts... my memories were pretty cool. I discovered them a long time ago, and it was pretty nice to think that this was the history of everything. It seemed as thought it was the time to eat, play, drink and think, and no one could say anything. I really liked how the grass met the
-            .reviewmainSectionInternal.col1
-                #mainTitleLarge My first Kiss
-                #mainEditorWindow{:contentEditable=>"true"} Your thoughts... my memories were pretty cool. I discovered them a long time ago, and it was pretty nice to think that this was the history of everything. It seemed as thought it was the time to eat, play, drink and think, and no one could say anything. I really liked how the grass met the
+            - if @posts.nil? || @posts.length == 0
+                No posts written yet...
+            - else
+                - @posts.each do |post|
+                    .reviewmainSectionInternal.col2
+                        .post_title
+                            != post["title"]
+                        .post_date #{ post["date"] }
+                        .post_body
+                            != post["body"]
+                        - if post["tags"].length > 0
+                            .post_tags Tags: ##{post["tags"].join(" #")}
+            - if !(@drafts.nil? || @drafts.length == 0)
+                .reviewmainSectionInternal.col_separator
+                    .post_title
+                        Your Drafts- these are not yet published
+                - @drafts.each do |draft|
+                    .reviewmainSectionInternal.col2
+                        .post_title
+                            != draft["title"]
+                        .post_date #{ draft["date"] }
+                        .post_body
+                            != draft["body"]
+                        - if draft["tags"].length > 0
+                            .post_tags Tags: # #{draft["tags"].join(" #")}
+
     #footerReview
         %a.grayColor{:href=>"./about"}
             About mymemories
 
 %script
-    $('#tumblelog').masonry({itemSelector:"reviewmainSectionInternal",columnWidth: 240});
+    $('#tumblelog').masonry({itemSelector:"reviewmainSectionInternal",columnWidth: 230});

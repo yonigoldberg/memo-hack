@@ -103,3 +103,50 @@ var toggleSavedIndicator = function(){
     $(".unsavedMemo").toggle();
     isAutosaved = !isAutosaved;
 }
+
+function validateEmail(email) { 
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+} 
+
+
+var setEmailTokenizer = function(selector){
+    $(selector).tagit({
+        placeholderText:"Enter emails",
+        beforeTagAdded: function(evennt,ui){
+
+            if(!validateEmail(ui.tagLabel))
+                ui.tag.addClass("not_valid");
+
+        }
+
+    })
+}
+
+var validateEmailTokenizerAndAdd = function(){
+    if($("#invite .not_valid").length !=0){
+        $("#validatorResponse").text("There are invalid emails");
+        return;
+    }
+
+    if ($("#invite .tagit-choice").length==0){
+        $("#validatorResponse").text("Enter some emails");
+        return;
+    }
+
+    var emails = $("#invite").tagit("assignedTags");
+    for (var e in emails){
+        $("#share_list").append('<div class="askQuestion">\
+          <div class="askQuestionInternal">\
+            <div class="formBar sharePerson">&nbsp;&nbsp;&nbsp;'+ emails[e] +'</div>\
+            <div class="formBar sharePerson">Wating For replay</div>\
+            <button class="midPageButton revoke" type="submit">Remove</button>\
+            <button class="midPageButton revoke" type="submit">Remind</button>\
+          </div></div>')
+        
+    }
+
+    $("#validatorResponse").text("");
+    $("#invite").tagit("removeAll");
+    
+}

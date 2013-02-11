@@ -30,18 +30,19 @@
             -if !@question.nil?
 
                 #mainTitleLarge{:contentEditable=>"true"}
-                    = @question[:title]
+                    = @post.nil? ? @question[:title] : @post.first["title"]
                 #mainEditorWindow{:contentEditable=>"true"}
-                    = @question[:question]
+                    != @post.nil? ? @question[:question] : @post.first["body"]
 
 
                 .sideArea
-                    %input.date{:id=>"memoryDate", :contentEditable=>"true",:type=>"date"}
-                    %input.date{:id=>"memoryLocation", :contentEditable=>"true",:placeholder=>"Location"}
-                //#mainTitleLarge
-                //    - @blogs.each do |b|
-                //        %h2 Blog:
-                //        #{b.inspect}
+                    - mem_date = @user_question.nil? || @user_question.occured.nil? ? Date.today.to_s : @user_question[:occured]
+                    - mem_location = @user_question.nil? || @user_question.location.nil?? "" :  @user_question[:location]
+                    - mem_state = @user_question.nil? || @user_question.is_draft ? "Draft" : "Published"
+                    %input.date{:id=>"memoryDate", :contentEditable=>"true",:type=>"date", :value => "#{mem_date}" }
+                    %input.date{:id=>"memoryLocation", :contentEditable=>"true",:placeholder=>"Location", :value => "#{mem_location}"}
+                    = mem_state
+
 
             -else
                 Please add a question
@@ -52,4 +53,6 @@
             About mymemories
 
 %script
+    var newPost = #{@post.nil?};
+    var qid = #{@qid};
     writePage();

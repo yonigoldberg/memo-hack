@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130129131647) do
+ActiveRecord::Schema.define(:version => 20130211100850) do
 
   create_table "authentications", :force => true do |t|
     t.integer "user_id"
@@ -37,6 +37,17 @@ ActiveRecord::Schema.define(:version => 20130129131647) do
   end
 
   add_index "user_blogs", ["user_id"], :name => "index_user_blogs_on_user_id", :unique => true
+
+  create_table "user_questions", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "question_id"
+    t.string   "location"
+    t.date     "occured"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "tumblr_id"
+    t.boolean  "is_draft", :default => true
+  end
 
   create_table "users", :force => true do |t|
     t.string   "tumblr_uid"

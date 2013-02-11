@@ -5,22 +5,24 @@ module TumblrHelper
     json['response']['user']['blogs']
   end
 
-  def self.save_post_as_draft(current_user, title, body, date, location)
+  def self.create_post_as_draft(current_user, title, body)
   	access_token = current_user.prepare_tumblr_access_token
-    json = MultiJson.load(access_token.post("http://api.tumblr.com/v2/blog/#{current_user.user_blog.blog_name}.tumblr.com/post", 
-    	{
+    json = tumblr_api_post_request_json(current_user,"post", {
     		:type => "text",	
-    		:state => "draft",
+    		:state => "private",
     		:title => title,
     		:body => body,
-    		:tags => location
-    		}).body.to_s)
-    json['meta']['status'] == 201 
+    		})
+  end
+
+  def self.update_post(current_user, post_id, params)
+    params[:id] = post_id
+    tumblr_api_post_request_json(current_user,"post/edit", params) 
   end
 
   # specify type of posts to get - text, quote, link, answer, video, audio, photo, chat (none is any kind)
-  def self.get_posts(current_user)
-    json = self.tumblr_api_get_request_json(current_user, "posts")
+  def self.get_posts(current_user, params = {})
+    json = self.tumblr_api_get_request_json(current_user, "posts", params)
   	json['response']['posts']
   end
 
@@ -31,6 +33,12 @@ module TumblrHelper
 
   def self.tumblr_api_get_request_json(current_user, api_url, parameters={})
     access_token = current_user.prepare_tumblr_access_token
-    json = MultiJson.load(access_token.get("http://api.tumblr.com/v2/blog/#{current_user.user_blog.blog_name}.tumblr.com/#{api_url}?api_key=#{ENV['TUMBLR_KEY']}", parameters).body.to_s)
+    parameters["api_key"] = ENV['TUMBLR_KEY']
+    json = MultiJson.load(access_token.get("http://api.tumblr.com/v2/blog/#{current_user.user_blog.blog_name}.tumblr.com/#{api_url}?api_key=#{ENV['TUMBLR_KEY']}&id=#{parameters['id']}").body.to_s)
+  end
+
+  def self.tumblr_api_post_request_json(current_user, api_url, parameters={})
+    access_token = current_user.prepare_tumblr_access_token
+    json = MultiJson.load(access_token.post("http://api.tumblr.com/v2/blog/#{current_user.user_blog.blog_name}.tumblr.com/#{api_url}", parameters).body.to_s)
   end
 end

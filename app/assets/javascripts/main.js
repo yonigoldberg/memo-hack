@@ -18,8 +18,6 @@ function displayPartial(options){
     // set defaults
     if (!options.tag) return;
     if (!options.maxlength) options.maxlength = 250;
-    
-
     $(options.tag).each(function(){
 
         if ($(this).text().length > options.maxlength){
@@ -46,11 +44,19 @@ function writePage(){
 
     };
 
-    $("#mainEditorWindow").css("color","gray").focusin(startWrite).keypress(startWrite).keyup(postChanged);
+    if (newPost)
+        $("#mainEditorWindow").css("color","gray").focusin(startWrite).keypress(startWrite);
+    $("#mainEditorWindow").keyup(postChanged);
     $("#memoryDate").change(postChanged);
     $("#memoryLocation").change(postChanged);
     $("#mainTitleLarge").change(postChanged);
 
+    initGoogleMapsLocation();
+}
+
+
+
+function initGoogleMapsLocation(){
     //google maps api location autocomplete
     var input = document.getElementById("memoryLocation");
     var autocomplete = new google.maps.places.Autocomplete(input);
@@ -77,8 +83,6 @@ function writePage(){
 
       infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
     });
-
-
 }
 
 function mainPage(){
@@ -92,8 +96,9 @@ var autoSaveMemory = _.debounce( function(){
     var memoryData = {
         title: $("#mainTitleLarge").html().replace(/^[\s]+/g,"").replace(/[\s]+$/g,""),
         body: $("#mainEditorWindow").html().replace(/^[\s]+/g,"").replace(/[\s]+$/g,""),
-        date: $("#memoryDate").val(),
+        occured: $("#memoryDate").val(),
         location: $("#memoryLocation").val(),
+        qid: qid,
     }
     $.post("memory", memoryData);
 },5000);

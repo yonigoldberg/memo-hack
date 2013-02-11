@@ -7,14 +7,24 @@ class MemoryController < ApplicationController
 		if no_questions
 			return
 		elsif (params.has_key?('qid'))
-			random_memory() unless @question = Question.find_by_id(params[:qid])
+			@qid = params[:qid]
+			random_memory() unless @question = Question.find_by_id(@qid)
+		
+			@user_question = UserQuestion.create_from_question_params_and_user_id(current_user,params,false)
+			@post = @user_question.get_tumblr_post(current_user) unless @user_question.nil?
 		else
 			random_memory()
 		end
 	end
 
 	def save_memory_draft
-		if (TumblrHelper.save_post_as_draft(current_user,params[:title], params[:body], params[:date], params[:location]))
+		@user_question = UserQuestion.create_from_question_params_and_user_id(current_user,params)
+		response = @user_question.update_from_parameters(params,current_user)
+
+		case (response['meta']['status'])
+		when 200
+			render :text => "updated", :status => 200
+		when 201
 			render :text => "created", :status => 201
 		else
 			render :text => "Error while creating post on tumbler", :status => 400

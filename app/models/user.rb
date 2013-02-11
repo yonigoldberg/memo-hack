@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   attr_accessible :tumblr_uid, :nickname, :avatar
   has_one :user_blog
   has_many :authentications, :dependent => :destroy
+  has_many :user_questions
 
   acts_as_authentic do |c|
     c.ignore_blank_passwords = true #ignoring passwords

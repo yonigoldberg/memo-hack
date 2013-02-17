@@ -5,7 +5,7 @@ class UserQuestion < ActiveRecord::Base
 
 
 	def self.create_from_question_params_and_user_id(current_user, params, create_new = true)
-		if (user_question = UserQuestion.where("user_id = ? AND question_id = ?", current_user[:id], params[:qid]).first)
+		if (user_question = UserQuestion.get_by_user_and_question(current_user[:id], params[:qid]))
 			return user_question 
 		end
 
@@ -16,12 +16,18 @@ class UserQuestion < ActiveRecord::Base
 		:is_draft => true )
 	end
 
-	def update_from_parameters(params, current_user)
+	def self.delete_by_qid(current_user, qid)
+		user_question = UserQuestion.get_by_user_and_question(current_user[:id], qid)
+		TumblrHelper.delete_post(current_user, user_question.tumblr_id)
+		user_question.destroy
+	end
+
+	def update_from_parameters(params, current_user, force_update = false)
 		self.location = params[:location] if params.has_key?("location")
 		self.occured = params[:occured] if params.has_key?("occured")
 		self.tumblr_id = params[:tumblr_id] if params.has_key?("tumblr_id")
 
-		if (params.has_key?("title") || params.has_key?("body"))
+		if (params.has_key?("title") || params.has_key?("body") || force_update)
 			if (self.tumblr_id.nil?)
 				response = TumblrHelper.create_post_as_draft(current_user,params[:title], params[:body])
 				self.tumblr_id = response["response"]["id"]
@@ -47,5 +53,8 @@ class UserQuestion < ActiveRecord::Base
 		return posts_hash
 	end
 
+	def self.get_by_user_and_question(uid,qid)
+		UserQuestion.where("user_id = ? AND question_id = ?", uid, qid).first
+	end
 
 end

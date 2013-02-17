@@ -4,7 +4,8 @@ MemoHack::Application.routes.draw do
   get 'memory/:qid' => 'memory#memory'
   get 'memory' => 'memory#random_memory'
   post 'memory' => 'memory#save_memory_draft'
-  delete 'memory/:qid' => 'memory#destroy'
+  match 'memory/:qid/delete' => 'memory#destroy'
+  match 'memory/:qid/toggle_publish' => 'memory#toggle_publish'
 
   match 'review' => 'review#current'
   match 'review/:id' => 'review#review'

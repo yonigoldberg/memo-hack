@@ -9,12 +9,13 @@
 					%i{:class => "icon-pencil"}
 					&nbspEdit
 			%li
-				%a{:tabindex => "-1", :href =>"#"} 
+				- published = post["state"] =='published'
+				%a{:tabindex => "-1", :href =>"/memory/#{qid}/toggle_publish?state=#{published ? 'private' : 'published'}"} 
 					%i{:class => "icon-repeat"}
 					&nbsp 
-					= post["state"] =='published'? 'Turn to Draft' : 'Publish'
+					= published ? 'Turn to Draft' : 'Publish'
 			%li
-				%a{:tabindex => "-1", :href =>"#"}
+				%a{:tabindex => "-1", :href =>"/memory/#{qid}/delete"}
 					%p{:class => "text-error"} 
 						%i{:class => "icon-remove"}
 						&nbspDelete

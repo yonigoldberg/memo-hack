@@ -27,7 +27,8 @@ module TumblrHelper
   end
 
   def self.delete_post(current_user, post_id)
-    
+    params = {:id => post_id}
+    tumblr_api_post_request_json(current_user,"post/delete", params) 
   end
 
   def self.get_drafts(current_user)

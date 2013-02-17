@@ -26,6 +26,10 @@ module TumblrHelper
   	json['response']['posts']
   end
 
+  def self.delete_post(current_user, post_id)
+    
+  end
+
   def self.get_drafts(current_user)
   	json = self.tumblr_api_get_request_json(current_user, "posts/draft")
   	json['response']['posts']

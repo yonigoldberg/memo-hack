@@ -25,4 +25,8 @@ class ApplicationController < ActionController::Base
         return false
       end
     end
+
+    def current_user_id?(user_id)
+      current_user && user_id == @current_user.id
+    end
 end

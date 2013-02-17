@@ -15,4 +15,5 @@
 //= require underscore-min
 //= require jquery.masonry.min
 // jquery.imagesloaded.min
+//= require bootstrap-dropdown
 //= require_tree .

@@ -6,14 +6,12 @@ class MemoryController < ApplicationController
 	def memory
 		if no_questions
 			return
-		elsif (params.has_key?('qid'))
+		else (params.has_key?('qid'))
 			@qid = params[:qid]
 			random_memory() unless @question = Question.find_by_id(@qid)
 		
 			@user_question = UserQuestion.create_from_question_params_and_user_id(current_user,params,false)
 			@post = @user_question.get_tumblr_post(current_user) unless @user_question.nil?
-		else
-			random_memory()
 		end
 	end
 
@@ -48,5 +46,8 @@ class MemoryController < ApplicationController
 
 	def random_memory
 		redirect_to :action => "memory", :qid => Question.first(:offset => rand(Question.count))
+	end
+
+	def destroy
 	end
 end

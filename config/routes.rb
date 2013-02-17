@@ -1,8 +1,11 @@
 MemoHack::Application.routes.draw do
   root :to => "home#index"
 
-  get 'memory' => 'memory#memory'
+  get 'memory/:qid' => 'memory#memory'
+  get 'memory' => 'memory#random_memory'
   post 'memory' => 'memory#save_memory_draft'
+  delete 'memory/:qid' => 'memory#destroy'
+
   match 'review' => 'review#current'
   match 'review/:id' => 'review#review'
   match 'about' => 'about#about'

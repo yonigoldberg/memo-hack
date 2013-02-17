@@ -1,0 +1,20 @@
+.dropdown
+	.btn-group{:class => "post_settings"}
+		%a{:class=>"dropdown-toggle btn-small", :"data-toggle" => "dropdown", :href =>"#"} 
+			%i{:class => "icon-cog"}
+			%span{:class=>"caret"}
+		%ul{:class => "dropdown-menu"}
+			%li
+				%a{:tabindex => "-1", :href =>"/memory/#{qid}"} 
+					%i{:class => "icon-pencil"}
+					&nbspEdit
+			%li
+				%a{:tabindex => "-1", :href =>"#"} 
+					%i{:class => "icon-repeat"}
+					&nbsp 
+					= post["state"] =='published'? 'Turn to Draft' : 'Publish'
+			%li
+				%a{:tabindex => "-1", :href =>"#"}
+					%p{:class => "text-error"} 
+						%i{:class => "icon-remove"}
+						&nbspDelete

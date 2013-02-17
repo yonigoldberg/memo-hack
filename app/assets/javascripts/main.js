@@ -100,7 +100,7 @@ var autoSaveMemory = _.debounce( function(){
         location: $("#memoryLocation").val(),
         qid: qid,
     }
-    $.post("memory", memoryData);
+    $.post("/memory", memoryData);
 },5000);
 
 var toggleSavedIndicator = function(){

@@ -2,12 +2,13 @@
     #mainTitleLarge Review my memories
     #mainDescriptionWindow See an aggregation of my past work.
 
-.askQuestion
-    .askQuestionInternal
-        .formBar.suggestQuestion Suggest a topic
-        %input.registerInput.long{:type=>"text",:name=>"title",:required=>"required", :placeholder=>"Topic. i.e my first kiss"}
-        %input.registerInput.short{:type=>"text",:name=>"title",:required=>"required", :placeholder=>"My name"}
-        %button.midPageButton.suggest{:type=>"submit"} Suggest
+- if @drafts.nil?
+    .askQuestion
+        .askQuestionInternal
+            .formBar.suggestQuestion Suggest a topic
+            %input.registerInput.long{:type=>"text",:name=>"title",:required=>"required", :placeholder=>"Topic. i.e my first kiss"}
+            %input.registerInput.short{:type=>"text",:name=>"title",:required=>"required", :placeholder=>"My name"}
+            %button.midPageButton.suggest{:type=>"submit"} Suggest
 #thumblog
     - if @posts.nil? || @posts.length == 0
         No posts written yet...

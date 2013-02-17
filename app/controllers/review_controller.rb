@@ -1,11 +1,12 @@
 class ReviewController < ApplicationController
-  before_filter :require_user
+  # before_filter :require_user
 
 	def review
-		all_posts = TumblrHelper.get_posts(current_user)
-		@posts_hash = UserQuestion.get_posts_by_user_hash(current_user)
+		user = User.find(params[:id])
+		all_posts = TumblrHelper.get_posts(user)
+		@posts_hash = UserQuestion.get_posts_by_user_hash(user)
 		@posts = all_posts.select {|v| v["state"] == "published"}
-		@drafts = all_posts.select {|v| v["state"] == "private"}
+		@drafts = current_user_id?(Integer(params[:id])) ? all_posts.select {|v| v["state"] == "private"} : nil
 	end
 
 	def current

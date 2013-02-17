@@ -1,8 +1,10 @@
 .reviewmainSectionInternal.col2
+	- post_details = @posts_hash[draft["id"].to_s()]
+	= render 'settings_dropdown', :post => draft, :qid => post_details[:question_id] unless @drafts.nil? 
 	.post_title
 		!= draft["title"]
 	draft
-	- post_details = @posts_hash[draft["id"].to_s()]
+	
 	.post_date 
 		= render 'time_and_place', :post_details => post_details
 	.post_body

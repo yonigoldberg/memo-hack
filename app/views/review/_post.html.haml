@@ -1,0 +1,12 @@
+.reviewmainSectionInternal.col2
+	.post_title
+		!= post["title"]
+	- post_details = @posts_hash[post["id"].to_s()]
+	.post_date 
+		= render 'time_and_place', :post_details => post_details
+	.post_body
+		!= post["body"]
+	- if post["tags"].length > 0
+		.post_tags Tags: ##{post["tags"].join(" #")}
+	- time =  time_ago_in_words( post["date"] )
+	.post_date Posted #{time} ago.        

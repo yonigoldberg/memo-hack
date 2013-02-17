@@ -39,9 +39,9 @@ class UserQuestion < ActiveRecord::Base
 
 	def self.get_posts_by_user_hash(user_id)
 		posts = UserQuestion.where("user_id = ?", user_id)
-		posts_hash = Hash.new{|h,k| h[k] = []}
+		posts_hash = Hash.new{|h,k| h[k] = {}}
 		posts.each do |p|
-			posts_hash[p.tumblr_id] << p
+			posts_hash[p.tumblr_id] = p
 		end
 
 		return posts_hash

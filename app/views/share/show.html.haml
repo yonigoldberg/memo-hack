@@ -1,0 +1,31 @@
+%script{:src => "assets/jquery-ui-1.10.0.custom.min"}
+%script{:src => "assets/tag-it.min"}
+%link{:rel=>"stylesheet", :type =>"text/css" ,:href=>"assets/dot-luv/jquery-ui-1.10.0.custom.min.css"}
+.mainSectionInternal
+    #mainTitleLarge Share my memories
+    #mainDescriptionWindow Show my writings to friends and family. Ask them to suggest new topics to write about.
+#share_list    
+    .askQuestion
+        .askQuestionInternal
+            .formBar.sharePerson &nbsp;&nbsp;&nbsp;turbahn@gmail.com
+            .formBar.sharePerson Wating For replay
+            %button.midPageButton.revoke{:type=>"submit"} Remove
+            %button.midPageButton.revoke{:type=>"submit"} Remind
+
+    .askQuestion
+        .askQuestionInternal
+            .formBar.sharePerson &nbsp;&nbsp;&nbsp;Matan Zohar
+            .formBar.sharePerson Following
+            %button.midPageButton.revoke{:type=>"submit"} Remove
+
+.askQuestion
+    .askQuestionInternal
+        .formBar Invite more people
+        %ul.registerInput.long{:id=>"invite", :type=>"text",:name=>"title",:required=>"required", :placeholder=>"Enter emails"}
+        %button.midPageButton.share{:type=>"submit"} Share my memories
+        #validatorResponse
+
+
+%script
+    setEmailTokenizer("#invite");
+    $(".share").click(validateEmailTokenizerAndAdd )

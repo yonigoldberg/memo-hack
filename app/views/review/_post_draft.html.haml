@@ -1,0 +1,13 @@
+.reviewmainSectionInternal.col2
+	.post_title
+		!= draft["title"]
+	draft
+	- post_details = @posts_hash[draft["id"].to_s()]
+	.post_date 
+		= render 'time_and_place', :post_details => post_details
+	.post_body
+		!= draft["body"]
+	- if draft["tags"].length > 0
+		.post_tags Tags: # #{draft["tags"].join(" #")}
+	- time =  time_ago_in_words( draft["date"] )
+	.post_date Posted #{time} ago.

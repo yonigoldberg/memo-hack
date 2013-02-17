@@ -1,60 +1,25 @@
-#holder.backgroundMemory
-    #body
-        .topLeftSection
-            .logo.logoInternal
-                %span.regularColor.small bio
-                %span.boldColor.small blr
-            %img{:src=>"#{@current_user.avatar}",:style=>"width:46px;height:46px;float:left"}
-            %a.friend{:href=>"./logout"}
-                .text Log out
-            .divider
-            %a.friend.selected{:href=>"./review"}
-                .text Review my memories
-            %a.friend{:href=>"./share"}
-                .text Share my memories
-        .pageCurlSection
-            %a.curl{:href=>"memory"} Relive a new memory
+.mainSectionInternal
+    #mainTitleLarge Review my memories
+    #mainDescriptionWindow See an aggregation of my past work.
 
-        .mainSectionInternal
-            #mainTitleLarge Review my memories
-            #mainDescriptionWindow See an aggregation of my past work.
-
-        .askQuestion
-            .askQuestionInternal
-                .formBar.suggestQuestion Suggest a topic
-                %input.registerInput.long{:type=>"text",:name=>"title",:required=>"required", :placeholder=>"Topic. i.e my first kiss"}
-                %input.registerInput.short{:type=>"text",:name=>"title",:required=>"required", :placeholder=>"My name"}
-                %button.midPageButton.suggest{:type=>"submit"} Suggest
-        #thumblog
-            - if @posts.nil? || @posts.length == 0
-                No posts written yet...
-            - else
-                - @posts.each do |post|
-                    .reviewmainSectionInternal.col2
-                        .post_title
-                            != post["title"]
-                        .post_date #{ post["date"] }
-                        .post_body
-                            != post["body"]
-                        - if post["tags"].length > 0
-                            .post_tags Tags: ##{post["tags"].join(" #")}
-            - if !(@drafts.nil? || @drafts.length == 0)
-                .reviewmainSectionInternal.col_separator
-                    .post_title
-                        Your Drafts- these are not yet published
-                - @drafts.each do |draft|
-                    .reviewmainSectionInternal.col2
-                        .post_title
-                            != draft["title"]
-                        .post_date #{ draft["date"] }
-                        .post_body
-                            != draft["body"]
-                        - if draft["tags"].length > 0
-                            .post_tags Tags: # #{draft["tags"].join(" #")}
-
-    #footerReview
-        %a.grayColor{:href=>"./about"}
-            About mymemories
+.askQuestion
+    .askQuestionInternal
+        .formBar.suggestQuestion Suggest a topic
+        %input.registerInput.long{:type=>"text",:name=>"title",:required=>"required", :placeholder=>"Topic. i.e my first kiss"}
+        %input.registerInput.short{:type=>"text",:name=>"title",:required=>"required", :placeholder=>"My name"}
+        %button.midPageButton.suggest{:type=>"submit"} Suggest
+#thumblog
+    - if @posts.nil? || @posts.length == 0
+        No posts written yet...
+    - else
+        - @posts.each do |post|
+            = render "post", :post => post
+    - if !(@drafts.nil? || @drafts.length == 0)
+        .reviewmainSectionInternal.col_separator
+            .post_title
+                Your Drafts- these are not yet published
+        - @drafts.each do |draft|
+            =render "post_draft", :draft => draft
 
 %script
     displayPartial({tag: ".post_body", maxlength: 300 });

@@ -1,0 +1,15 @@
+.topLeftSection
+    .logo.logoInternal
+        %span.regularColor.small bio
+        %span.boldColor.small blr
+    %img{:src=>"#{@current_user.avatar}",:style=>"width:46px;height:46px;float:left"}
+    %a.friend{:href=>logout_path}
+        .text Log out
+    .divider
+    %a.friend{:href=>"#{review_path}"}
+        .text Review my memories
+    %a.friend{:href=>share_path}
+        .text Share my memories
+    .divider            
+.pageCurlSection
+    %a.curl{:href=>"/memory"} Relive a new memory

@@ -1,0 +1,4 @@
+= "Happened" if (post_details.occured.present? || post_details.location.present?)
+= " on #{post_details.occured}" if post_details.occured.present?
+= " in #{post_details["location"]}" if post_details.location.present?
+	

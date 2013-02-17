@@ -1,8 +1,13 @@
 %html
-  %head
-    %title BioBlr
-    = stylesheet_link_tag    "application", :media => "all"
-    = javascript_include_tag "application"
-    = csrf_meta_tags
-  %body
-    = yield
+	%head
+		%title BioBlr
+		= stylesheet_link_tag    "application", :media => "all"
+		= javascript_include_tag "application"
+		= csrf_meta_tags
+	%body
+		#holder.backgroundMemory
+			#body
+				- if @current_user
+					= render "shared/title"
+				= yield
+				= render "shared/footer"

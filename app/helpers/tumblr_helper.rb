@@ -1,7 +1,6 @@
 module TumblrHelper
   def self.get_blog_list(current_user)
-    access_token = current_user.prepare_tumblr_access_token
-    json = MultiJson.load(access_token.get("http://api.tumblr.com/v2/user/info").body.to_s)
+    json = tumblr_api_get_user_info(current_user)
     json['response']['user']['blogs']
   end
 
@@ -34,6 +33,11 @@ module TumblrHelper
   def self.get_drafts(current_user)
   	json = self.tumblr_api_get_request_json(current_user, "posts/draft")
   	json['response']['posts']
+  end
+
+  def self.tumblr_api_get_user_info(current_user)
+    access_token = current_user.prepare_tumblr_access_token
+    json = MultiJson.load(access_token.get("http://api.tumblr.com/v2/user/info").body.to_s)
   end
 
   def self.tumblr_api_get_request_json(current_user, api_url, parameters={})

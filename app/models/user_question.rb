@@ -43,7 +43,18 @@ class UserQuestion < ActiveRecord::Base
 		post = TumblrHelper.get_posts(current_user, {"id" => self.tumblr_id} ) unless self.tumblr_id.nil?
 	end
 
-	def self.get_posts_by_user_hash(user_id)
+	def self.get_user_posts_hash(user)
+		hash = UserQuestion.get_user_questions_hash(user.id)
+		all_posts = TumblrHelper.get_posts(user)
+		all_posts.each do |p|
+			p['question'] = hash[p['id'].to_s]
+			hash[p['id'].to_s] = p
+		end
+
+		return hash
+	end
+
+	def self.get_user_questions_hash(user_id)
 		posts = UserQuestion.where("user_id = ?", user_id)
 		posts_hash = Hash.new{|h,k| h[k] = {}}
 		posts.each do |p|

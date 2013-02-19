@@ -9,6 +9,7 @@ MemoHack::Application.routes.draw do
 
   match 'review' => 'review#current'
   match 'review/:id' => 'review#review'
+  match 'review/timeline/:id' => 'review#timeline'
   match 'about' => 'about#about'
   match '/auth/:provider/callback' => 'authentications#create'
   match 'logout' => 'authentications#destroy'

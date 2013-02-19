@@ -16,7 +16,7 @@
         .sideArea
             - mem_date = @user_question.nil? || @user_question.occured.nil? ? Date.today.to_s : @user_question[:occured]
             - mem_location = @user_question.nil? || @user_question.location.nil?? "" :  @user_question[:location]
-            - mem_state = @user_question.nil? || @user_question.is_draft ? "Draft" : "Published"
+            - mem_state = @user_question.nil? || @post.first['state'] =='private' ? "Draft" : "Published"
             %input.date{:id=>"memoryDate", :contentEditable=>"true",:type=>"date", :value => "#{mem_date}" }
             %input.date{:id=>"memoryLocation", :contentEditable=>"true",:placeholder=>"Location", :value => "#{mem_location}"}
             = mem_state
